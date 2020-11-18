@@ -1,0 +1,281 @@
+/*GLOBAL STYLES*/
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;600&family=Source+Serif+Pro:wght@200;400;600&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root {
+    --blue: #4F5D75;
+    --silver: #BFC0C0;
+    --red: #CA6868;
+    --med-blue: #2D3142;
+    --dark-blue: #212431;
+}
+
+ul {
+    list-style-type: none;
+}
+
+input:focus, textarea:focus, select:focus, button:focus{
+        outline: none;
+    }
+
+/*BACKGROUND*/
+body {
+    background-color: var(--silver);
+}
+
+.page {
+    max-width: 1000px;
+    width: 100%;
+    margin left: auto;
+    margin-right: auto;
+    left: 50%;
+    transform:  translateX(-50%);
+    background-color: white;
+    position: absolute;
+    z-index: -1;
+/*    height: 200vh;*/
+}
+
+/*FONT STYLING*/
+.nav-button,
+.tab-button {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: "Source Sans Pro", serif;
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/*MAIN LOGO*/
+.logo-main-box {
+    width: 100%;
+    background-color: var(--blue);
+    align-items: center;
+}
+
+.logo-main {
+    display: block;
+    margin: auto;
+    padding: 2.5%;
+    width: 45%;
+}
+
+/*HEADER*/
+.nav-head {
+    overflow: hidden;
+    background-color: var(--med-blue);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    margin: auto;
+    z-index: 2;
+}
+
+.nav-head li {
+    margin: auto;
+    min-height: 40px;
+}
+
+.left-stack {
+    float: left;
+    display: none;
+    overflow: hidden;
+    min-width: 200px;
+}
+
+.right-stack {
+    float: right;
+    width: 125px;
+}
+
+.nav-button {
+    padding: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
+    display: block;
+    min-height: 40px;
+}
+
+#home-button {
+    position: relative;
+    right: 175px;
+}
+
+.logo-head {
+    margin: auto;
+    display: block;
+    max-height: 16px;
+    padding: 0px;
+    position: relative;
+    right: 200px;
+}
+
+.nav-button:hover {
+    background-color: var(--blue);
+    color: var(--dark-blue);
+    font-weight: 600;
+}
+
+#li-logo.is-visible {
+    display: block;
+}
+
+.slidein {
+    animation: slidein .5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    -webkit-animation: slidein .5s ease;
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-fill-mode: forwards;
+}
+
+.slideout {
+    animation: slideout .5s ease;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+    -webkit-animation: slideout .5s ease;
+    -webkit-animation-timing-function: ease-in;
+    -webkit-animation-fill-mode: forwards;
+}
+
+/*HEADER BEHAVIOR*/
+@keyframes slidein {
+    from {
+        right: 200px;
+    }
+
+    to {
+        right: 0px;
+    }
+}
+
+@-webkit-keyframes slidein {
+    from {
+        right: 200px;
+    }
+
+    to {
+        right: 0px;
+    }
+}
+
+@keyframes slideout {
+    from {
+        right: 0px;
+    }
+
+    to {
+        right: 200px;
+    }
+}
+
+@-webkit-keyframes slideout {
+    from {
+        right: 0;
+    }
+
+    to {
+        right: 200px;
+    }
+}
+
+
+/*SIDEBAR*/
+
+.page-tabs {
+    float: left;
+    position: sticky;
+    position: -webkit-stick;
+    top: 40px;
+    background-color: var(--blue);
+    width: 200px;
+    margin: auto;
+    overflow-x: hidden;
+}
+
+.tab-button {
+    padding: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
+    display: block;
+    min-height: 40px;
+    text-align: left;
+    padding-left: 16px;
+    width: 100%;
+    border: none;
+    background-color: var(--blue);
+    cursor: pointer;
+}
+
+.nav-button-active {
+    background-color: var(--med-blue);
+}
+
+.subcategory {
+    display: none;
+    background-color: var(--med-blue);
+    width: 100%;
+}
+
+.subcategory li {
+    background-color: var(--med-blue);
+}
+
+.subcategory li .tab-button {
+    background-color: var(--med-blue);
+    padding-left: 24px;
+}
+
+.page-tabs li button.nav-button-active:hover {
+    color: white;
+    background-color: var(--dark-blue);
+    font-weight: 400;
+}
+
+.page-tab .tab-button:hover {
+    color: white;
+    background-color: var(--med-blue);
+    font-weight: 400;
+}
+
+.subcategory li .tab-button:hover {
+    color: white;
+    background-color: var(--dark-blue);
+    font-weight: 400;
+}
+
+.sidebar-background {
+    background-color: var(--blue);
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 200px;
+    z-index: -2;
+}
+/*MAIN CONTENT*/
+
+.main-content {
+    margin-left: 200px;
+    align-items: center;
+    z-index: 0;   
+}
+
+.iframe-box {
+    object-fit: scale-down;
+    padding:20px;
+    display: block;
+    margin: auto;
+}
+
+
